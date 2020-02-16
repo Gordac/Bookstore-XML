@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Books>
+  <Book>
+    <id>1</id>
+    <title>Lies of Locke Lamora</title>
+    <author>Scott Lynch</author>
+    <price>149</price>
+    <cover>https://upload.wikimedia.org/wikipedia/commons/thumb/6/64/Question_book-4.svg/1280px-Question_book-4.svg.png</cover>
+    <description>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</description>
+  </Book>
+  <Book>
+    <id>2</id>
+    <title>Chronicles of the Black Company</title>
+    <author>Glen Cook</author>
+    <price>199</price>
+    <cover>https://upload.wikimedia.org/wikipedia/commons/thumb/6/64/Question_book-4.svg/1280px-Question_book-4.svg.png</cover>
+    <description>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</description>
+  </Book>
+  <Book>
+    <id>3</id>
+    <title>SPQR</title>
+    <author>Mary Beard</author>
+    <price>249</price>
+    <cover>https://upload.wikimedia.org/wikipedia/commons/thumb/6/64/Question_book-4.svg/1280px-Question_book-4.svg.png</cover>
+    <description>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</description>
+  </Book>
+  <Book>
+    <id>4</id>
+    <title>Big Java Late Objects</title>
+    <author>Hortsmann</author>
+    <price>499</price>
+    <cover>https://upload.wikimedia.org/wikipedia/commons/thumb/6/64/Question_book-4.svg/1280px-Question_book-4.svg.png</cover>
+    <description>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</description>
+  </Book>
+</Books>

@@ -1,0 +1,59 @@
+﻿@using Bookstore.Models
+@model IEnumerable<Book>
+
+@{
+    ViewBag.Title = "View";
+}
+
+<h1>Available Books</h1>
+<div>
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table" align="center" border=1px>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.title)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.author)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.price)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.cover)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.description)
+        </th>
+    </tr>
+
+@foreach (Book item in Model) {
+<tr style="border=1px">
+    <td>
+        @Html.DisplayFor(modelItem => item.title)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.author)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.price)
+    </td>
+    <td>
+        <img src="@Html.DisplayFor(modelItem => item.cover)" width="80px" height="80px" />
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.description)
+    </td>
+    <td>
+        @Html.ActionLink("Edit", "Edit", new { id = item.id }) |
+        @Html.ActionLink("Details", "Details", new { id = item.id }) |
+        @Html.ActionLink("Delete", "Delete", new { id = item.id })
+    </td>
+</tr>
+}
+
+</table>
+
+</div>
