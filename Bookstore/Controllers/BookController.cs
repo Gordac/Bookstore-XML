@@ -5,6 +5,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Xml;
+using System.Xml.Linq;
 
 namespace Bookstore.Controllers
 {
@@ -40,23 +41,35 @@ namespace Bookstore.Controllers
 
         public ActionResult CreateNew()
         {
-            XmlDocument doc = new XmlDocument();
+            string filepath = HttpContext.Server.MapPath("~/XML/Books.xml");
+            string viewPath = HttpContext.Server.MapPath("~/Views/Book/Index.cshtml");
 
-            
+            var doc = XDocument.Load(filepath);
 
-            return View();
+            var newElement = new XElement("Book",
+                new XElement("id", 5),
+                new XElement("title", "Test"),
+                new XElement("author","test author"),
+                new XElement("price",666),
+                new XElement("cover", "https://upload.wikimedia.org/wikipedia/commons/thumb/6/64/Question_book-4.svg/1280px-Question_book-4.svg.png"),
+                new XElement("description", "Lorem Ipsum"));
+
+            doc.Element("Books").Add(newElement);
+            doc.Save(filepath);
+
+            return RedirectToAction("Index");
         }
 
         public ActionResult Update(int index)
         {
 
-            return View();
+            return RedirectToAction("Index");
         }
 
         public ActionResult Delete(int index)
         {
 
-            return View();
+            return RedirectToAction("Index");
         }
     }
 }
