@@ -10,14 +10,11 @@ namespace Bookstore.Controllers
 {
     public class BookController : Controller
     {
-
-        public ActionResult Index() //https://www.aspsnippets.com/Articles/Read-and-display-XML-data-in-View-in-ASPNet-MVC-Razor.aspx
+        private List<Book> getData()
         {
             List<Book> bookList = new List<Book>();
 
             XmlDocument doc = new XmlDocument();
-            //doc.Load(@"../XML/Books.xml"); 
-            //doc.Load(@"C:\Users\John\source\repos\Bookstore\Bookstore\XML\Books.xml");
             doc.Load(Server.MapPath("~/XML/Books.xml"));
 
             foreach (XmlNode node in doc.SelectNodes("/Books/Book"))
@@ -33,9 +30,33 @@ namespace Bookstore.Controllers
                 });
             }
 
-            Console.WriteLine(bookList.Count);
+            return bookList;
+        }
 
-            return View(bookList);
+        public ActionResult Index()
+        {
+            return View(getData());
+        }
+
+        public ActionResult CreateNew()
+        {
+            XmlDocument doc = new XmlDocument();
+
+            
+
+            return View();
+        }
+
+        public ActionResult Update(int index)
+        {
+
+            return View();
+        }
+
+        public ActionResult Delete(int index)
+        {
+
+            return View();
         }
     }
 }
