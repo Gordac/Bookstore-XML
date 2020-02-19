@@ -39,6 +39,7 @@ namespace Bookstore.Controllers
             return View(getData());
         }
 
+        [HttpPost]
         public ActionResult CreateNew()
         {
             string filepath = HttpContext.Server.MapPath("~/XML/Books.xml");

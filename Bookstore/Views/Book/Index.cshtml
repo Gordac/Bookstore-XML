@@ -4,15 +4,35 @@
 @{
     ViewBag.Title = "View";
 }
+<style>
+    div.BannerDiv{
+        background-color:navajowhite;
+    }
+    
+    div.BodyDiv{
+        background-color:burlywood;
+    }
 
-<h1>Available Books</h1>
-<div>
+    input{
+        margin-bottom:10px;
+    }
+</style>
+<div class="BannerDiv" align="center">
     <div>
-        <p>
-            @Html.ActionLink("Create New", "CreateNew")  
-        </p>
+
+        <h1>Available Books</h1>
+        @using (Html.BeginForm("CreateNew", "Book"))
+        {
+            <input type="text" id="title" placeholder="Title" /> <br />
+            <input type="text" id="author" placeholder="Author" /> <br />
+            <input type="text" id="price" placeholder="Price" /> <br />
+            <input type="text" id="cover" placeholder=".jpg, .png, etc" /> <br />
+            <input type="text" id="description" placeholder="Description" style="width:400px; height:200px;" /> <br />
+            <input type="submit" value="Create New">
+        }
+        
     </div>
-    <div>
+    <div class="BodyDiv">
         
         <table class="table" align="center" border=1px>
             <tr>
