@@ -1,0 +1,25 @@
+﻿@model Bookstore.Models.Book
+
+@{
+    ViewBag.Title = "Add";
+}
+
+    <div>
+
+        <h1>Create new book</h1>
+        @using (Html.BeginForm("CreateNew", "Book", FormMethod.Post))
+        {
+            @Html.AntiForgeryToken()
+
+            <span>Title</span> @Html.TextBoxFor(model => model.title) <br />
+            <span>Author</span> @Html.TextBoxFor(model => model.author) <br />
+            <span>Price</span> @Html.TextBoxFor(model => model.price) <br />
+            <span>Cover(.jpg, .png, etc)</span> @Html.TextBoxFor(model => model.cover) <br />
+            <span>Description</span> @Html.TextBoxFor(model => model.description) <br />
+
+            <input type="submit" id="Submit" value="submit" />
+
+        }
+
+    </div>
+

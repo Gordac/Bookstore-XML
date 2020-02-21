@@ -32,4 +32,12 @@
     <cover>https://upload.wikimedia.org/wikipedia/commons/thumb/6/64/Question_book-4.svg/1280px-Question_book-4.svg.png</cover>
     <description>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</description>
   </Book>
+  <Book>
+    <id>5</id>
+    <title>test title</title>
+    <author>test author</author>
+    <price>606</price>
+    <cover>404.jpg</cover>
+    <description>description test</description>
+  </Book>
 </Books>

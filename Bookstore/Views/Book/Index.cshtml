@@ -21,16 +21,9 @@
     <div>
 
         <h1>Available Books</h1>
-        @using (Html.BeginForm("CreateNew", "Book"))
-        {
-            <input type="text" id="title" placeholder="Title" /> <br />
-            <input type="text" id="author" placeholder="Author" /> <br />
-            <input type="text" id="price" placeholder="Price" /> <br />
-            <input type="text" id="cover" placeholder=".jpg, .png, etc" /> <br />
-            <input type="text" id="description" placeholder="Description" style="width:400px; height:200px;" /> <br />
-            <input type="submit" value="Create New">
-        }
-        
+        <br />
+        <a href="~/Book/Add">Add Book</a>
+
     </div>
     <div class="BodyDiv">
         

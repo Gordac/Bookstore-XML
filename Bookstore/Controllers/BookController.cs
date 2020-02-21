@@ -39,21 +39,26 @@ namespace Bookstore.Controllers
             return View(getData());
         }
 
+        public ActionResult Add()
+        {
+            return View();
+        }
+
         [HttpPost]
-        public ActionResult CreateNew()
+        public ActionResult CreateNew(string title, string author, int price, string cover, string description)
         {
             string filepath = HttpContext.Server.MapPath("~/XML/Books.xml");
-            string viewPath = HttpContext.Server.MapPath("~/Views/Book/Index.cshtml");
+            //string viewPath = HttpContext.Server.MapPath("~/Views/Book/Index.cshtml");
 
             var doc = XDocument.Load(filepath);
 
             var newElement = new XElement("Book",
                 new XElement("id", 5),
-                new XElement("title", "Test"),
-                new XElement("author","test author"),
-                new XElement("price",666),
-                new XElement("cover", "https://upload.wikimedia.org/wikipedia/commons/thumb/6/64/Question_book-4.svg/1280px-Question_book-4.svg.png"),
-                new XElement("description", "Lorem Ipsum"));
+                new XElement("title", title),
+                new XElement("author",author),
+                new XElement("price",price),
+                new XElement("cover", cover),
+                new XElement("description", description));
 
             doc.Element("Books").Add(newElement);
             doc.Save(filepath);
