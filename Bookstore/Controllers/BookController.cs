@@ -11,7 +11,7 @@ namespace Bookstore.Controllers
 {
     public class BookController : Controller
     {
-        private List<Book> getData()
+        private List<Book> GetData()
         {
             List<Book> bookList = new List<Book>();
 
@@ -34,9 +34,25 @@ namespace Bookstore.Controllers
             return bookList;
         }
 
+        private int NewID()
+        {
+            List<Book> list = GetData();
+            int id = 1;
+
+            foreach(var obj in list)
+            {
+                if(obj.id >= id)
+                {
+                    id = obj.id;
+                }
+            }
+
+            return id + 1;
+        }
+
         public ActionResult Index()
         {
-            return View(getData());
+            return View(GetData());
         }
 
         public ActionResult Add()
@@ -48,12 +64,11 @@ namespace Bookstore.Controllers
         public ActionResult CreateNew(string title, string author, int price, string cover, string description)
         {
             string filepath = HttpContext.Server.MapPath("~/XML/Books.xml");
-            //string viewPath = HttpContext.Server.MapPath("~/Views/Book/Index.cshtml");
 
             var doc = XDocument.Load(filepath);
 
             var newElement = new XElement("Book",
-                new XElement("id", 5),
+                new XElement("id", NewID()),
                 new XElement("title", title),
                 new XElement("author",author),
                 new XElement("price",price),
@@ -66,14 +81,27 @@ namespace Bookstore.Controllers
             return RedirectToAction("Index");
         }
 
-        public ActionResult Update(int index)
+        public ActionResult Update(int id)
         {
 
             return RedirectToAction("Index");
         }
 
-        public ActionResult Delete(int index)
+        public ActionResult Delete(int id)
         {
+
+            XmlDocument doc = new XmlDocument();
+            doc.Load(Server.MapPath("~/XML/Books.xml"));
+
+            foreach (XmlNode node in doc.SelectNodes("Books/Book"))
+            {
+                if (node.SelectSingleNode("id").InnerText == id.ToString())
+                {
+                    node.ParentNode.RemoveChild(node);
+                    break;
+                }
+            }
+            doc.Save(Server.MapPath("~/XML/Books.xml"));
 
             return RedirectToAction("Index");
         }
