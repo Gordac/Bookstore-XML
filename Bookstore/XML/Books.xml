@@ -34,10 +34,10 @@
   </Book>
   <Book>
     <id>5</id>
-    <title>test title</title>
-    <author>test author</author>
-    <price>606</price>
-    <cover>404.jpg</cover>
-    <description>description test</description>
+    <title>test title update</title>
+    <author>test author update</author>
+    <price>666</price>
+    <cover>404.gif</cover>
+    <description>Test update</description>
   </Book>
 </Books>

@@ -1,0 +1,30 @@
+﻿@*@model IEnumerable<Book>
+@using Bookstore.Models*@
+@model List<Bookstore.Models.Book>
+
+@{
+    ViewBag.Title = "Update";
+}
+
+    <div>
+
+        <h1>Update book</h1>
+        @foreach (var item in Model)
+        {
+        using (Html.BeginForm("Update", "Book", new { id = item.id }, FormMethod.Post))
+        {
+
+            @Html.AntiForgeryToken()
+
+            <span>Title</span><br /> @Html.TextBoxFor(model => item.title, new { Name = "title" }) <br />
+            <span>Author</span><br /> @Html.TextBoxFor(model => item.author, new { Name = "author" }) <br />
+            <span>Price</span><br /> @Html.TextBoxFor(model => item.price, new { Name = "price"}) <br />
+            <span>Cover(.jpg, .png, etc)</span><br /> @Html.TextBoxFor(model => item.cover, new { Name = "cover" }) <br />
+            <span>Description</span><br /> @Html.TextAreaFor(model => item.description, new { Name = "description", style = "width:400px; height:100px;" }) <br />
+
+            <input type="submit" id="Submit" value="submit" />
+        }
+        }
+
+    </div>
+

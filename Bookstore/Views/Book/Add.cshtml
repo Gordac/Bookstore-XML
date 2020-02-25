@@ -11,11 +11,11 @@
         {
             @Html.AntiForgeryToken()
 
-            <span>Title</span> @Html.TextBoxFor(model => model.title) <br />
-            <span>Author</span> @Html.TextBoxFor(model => model.author) <br />
-            <span>Price</span> @Html.TextBoxFor(model => model.price) <br />
-            <span>Cover(.jpg, .png, etc)</span> @Html.TextBoxFor(model => model.cover) <br />
-            <span>Description</span> @Html.TextBoxFor(model => model.description) <br />
+            <span>Title</span><br /> @Html.TextBoxFor(model => model.title) <br />
+            <span>Author</span><br /> @Html.TextBoxFor(model => model.author) <br />
+            <span>Price</span><br /> @Html.TextBoxFor(model => model.price) <br />
+            <span>Cover(.jpg, .png, etc)</span><br /> @Html.TextBoxFor(model => model.cover) <br />
+            <span>Description</span><br /> @Html.TextAreaFor(model => model.description, new { style="width:400px; height:100px;"}) <br />
 
             <input type="submit" id="Submit" value="submit" />
 

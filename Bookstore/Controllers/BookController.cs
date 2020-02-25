@@ -81,8 +81,48 @@ namespace Bookstore.Controllers
             return RedirectToAction("Index");
         }
 
-        public ActionResult Update(int id)
+        public ActionResult Edit(int id)
         {
+            List<Book> list = GetData();
+            List<Book> targetBook = new List<Book>();
+
+            foreach (Book item in list)
+            {
+                if(item.id == id)
+                {
+                    targetBook.Add(new Book
+                    {
+                        id = id,
+                        title = item.title,
+                        author = item.author,
+                        price = item.price,
+                        cover = item.cover,
+                        description = item.description
+                    });
+                    break;
+                }
+            }
+
+            return View("Update", targetBook);
+        }
+
+        [HttpPost]
+        public ActionResult Update(int id, string title, string author, int price, string cover, string description)
+        {
+            string filepath = HttpContext.Server.MapPath("~/XML/Books.xml");
+
+            XDocument doc = XDocument.Load(filepath);
+
+            var newBook = doc.Descendants("Book").Single(n => n.Element("id").Value == id.ToString());
+
+            newBook.SetElementValue("title", title); 
+            newBook.SetElementValue("author", author);
+            newBook.SetElementValue("price", price);
+            newBook.SetElementValue("cover", cover);
+            newBook.SetElementValue("description", description);
+
+            doc.Save(filepath);
+
 
             return RedirectToAction("Index");
         }

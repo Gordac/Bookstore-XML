@@ -32,9 +32,15 @@ namespace Bookstore
                 );
 
             routes.MapRoute(
-                name: "Delete",
+                name: "Edit",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Book", action = "Delete", id = UrlParameter.Optional }
+                defaults: new { controller = "Book", action = "Edit", id = UrlParameter.Optional }
+                );
+
+            routes.MapRoute(
+                name: "Update",
+                url: "{controller}/{action}/{id}",
+                defaults: new { controller = "Book", action = "Update", id = UrlParameter.Optional}
                 );
         }
     }
